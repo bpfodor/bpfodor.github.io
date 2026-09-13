@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balázs Fodor – Vehicle Safety Engineer & Material Modeling</title>
+  <meta name="description" content="Personal introduction page of Balázs Fodor, engineer at BMW AG for virtual vehicle safety and material modeling.">
+  <style>
+    :root {
+      --color-bg: #ffffff;
+      --color-bg-alt: #f7f7f5;
+      --color-text: #1a1a1a;
+      --color-muted: #5f5f5f;
+      --color-accent: #2b2b2b;
+      --color-border: #e0e0e0;
+      --max-width: 720px;
+      --space: 1.5rem;
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #2e2e2e;
+      --color-bg-alt: #383838;
+      --color-text: #e8e8e6;
+      --color-muted: #a8a8a8;
+      --color-accent: #f0f0f0;
+      --color-border: #4a4a4a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.6;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space);
+    }
+
+    .site-header {
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      color: var(--color-muted);
+    }
+
+    h1 {
+      margin: 0.3rem 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      max-width: 490px;
+      margin: 0 auto 1.5rem;
+      color: var(--color-muted);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      padding: 0;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      background: var(--color-bg);
+      color: var(--color-accent);
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .theme-toggle:hover,
+    .theme-toggle:focus {
+      border-color: var(--color-accent);
+    }
+
+    [data-theme="dark"] .theme-toggle .icon-dark,
+    .theme-toggle .icon-light {
+      display: none;
+    }
+
+    [data-theme="dark"] .theme-toggle .icon-light {
+      display: inline;
+    }
+
+    .nav a {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus {
+      border-color: var(--color-accent);
+    }
+
+    .section {
+      padding: 3rem 0;
+    }
+
+    .section-alt {
+      background: var(--color-bg-alt);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 a {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      border-bottom: 2px solid var(--color-accent);
+    }
+
+    h2 a:hover,
+    h2 a:focus {
+      border-color: var(--color-accent);
+    }
+
+    h2 a:has(img) {
+      border-bottom: none;
+      margin-left: 1.5em;
+    }
+
+    h2 a img {
+      height: 1.4em;
+      width: auto;
+      vertical-align: auto;
+      margin-right: 0.3em;
+    }
+
+    .skills {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .skills + .skills {
+      margin-top: 0.75rem;
+    }
+
+    .skills li {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .section p a,
+    .research-link a {
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 2px solid var(--color-accent);
+    }
+
+    .section p a:hover,
+    .section p a:focus,
+    .research-link a:hover,
+    .research-link a:focus {
+      border-color: var(--color-accent);
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-list a {
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 2px solid var(--color-accent);
+    }
+
+    .contact-list a:hover,
+    .contact-list a:focus {
+      border-color: var(--color-accent);
+    }
+
+    .site-footer {
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--color-muted);
+      font-size: 0.85rem;
+    }
+
+    .skills-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .skills-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-group h3 {
+      margin: 0 0 0.6rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-muted);
+      font-weight: 600;
+    }
+
+    .projects {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    .project-item {
+      border-left: 3px solid var(--color-accent);
+      padding-left: 1rem;
+    }
+
+    .project-item h3 {
+      margin: 0 0 0.2rem;
+      font-size: 1.05rem;
+    }
+
+    .project-meta {
+      margin: 0 0 0.4rem;
+      color: var(--color-muted);
+      font-size: 0.85rem;
+    }
+
+    .project-item p {
+      margin: 0;
+    }
+
+    .research-link {
+      padding-left: calc(1rem + 3px);
+    }
+
+    #research .projects {
+      gap: 1.0rem;
+    }
+
+    .research-link + .project-item {
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <p class="eyebrow">Who am I ?</p>
+      <h1>Balázs Fodor</h1>
+      <p class="subtitle">
+        Born in a paper & pencil world,<br> grown doing virtualization and vehicle development,<br> and now all-in for a data and AI driven future.
+      </p>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <span class="icon-light" aria-hidden="true">&#9728;</span>
+          <span class="icon-dark" aria-hidden="true">&#9789;</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p>
+          I am a senior vehicle safety engineer at BMW AG in Munich and as a <a href="https://en.wikipedia.org/wiki/Constitutive_equation">material model</a> and <a href="https://en.wikipedia.org/wiki/Crash_simulation">crash simulation</a>  specialist responsible for side crash protection performance of various vehicles on the <a href="https://de.wikipedia.org/wiki/BMW_CLAR-Plattform">CLAR-WE</a> Plattform.
+        </p>
+        <p>
+          After studying mechanical engineering in Budapest (2002-2007) (<a href="https://www.bme.hu/en">BME</a> <a href="https://gpk.bme.hu/en/">GPK</a> <a href="https://mm.bme.hu/home">MM</a>), I moved to germany and joined the Material Characterization and Modelling team at the  <a href="https://www.ivw.uni-kl.de/en/about-us/organization/orgchart">Leibniz Institute for Composite Materials</a> in Kaiserslautern as structural designer for aircraft structures (2007-2011). Since 2012, I have been working at BMW AG in various roles in the field of vehicle safety, focusing on crash simulation, virtual vehicle development, and material modeling.
+        </p>
+        <p>
+          I am currently deepening my expertise through a PhD project (2023-2027) under the supervising of <a href="https://www.mm.bme.hu/~kossa/indexen.html">Dr. Attila Kossa</a> at BME, focused on data-driven modeling of hyperelastic materials such as elastomers and hyperfoams.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <h2>Skills</h2>
+
+        <div class="skills-group">
+          <h3>Human Languages</h3>
+          <ul class="skills">
+            <li>Hungarian (native)</li>
+            <li>German (native)</li>
+            <li>English (fluent)</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <h3>Maschine Languages / Tools</h3>
+           <ul class="skills">
+            <li>Python</li>
+            <li>Bash</li>
+            <li>Wolfram Mathematica</li>
+            <li>Linux</li>
+            <li>LaTeX</li>
+          </ul>
+          <ul class="skills">
+            <li>Abaqus</li>
+            <li>LS-DYNA</li>
+            <li>Animator</li>
+            <li>ANSA</li>
+          </ul>
+        </div>
+      
+      <div class="skills-group">
+          <h3>Skills</h3>
+          <ul class="skills">
+            <li>asd</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+        <ul class="projects">
+          <li class="project-item">
+            <h3>Side crash protection</h3>
+            <p class="project-meta">BMW AG &middot; 2018 - today </p>
+            <p>
+              As the property owner, my responsibility is to ensure that side crash and rollover protection performance meets the project's targets, covering both consumer protection ratings and regulatory requirements. Because side crash performance is a total-vehicle property, this role heavily relies on coordinating closely with the design, crash simulation, and testing departments. My role is to coordinate the development process, root cause analysis, support desigion makeing process and ensure that all relevant stakeholders are aligned throughout the project lifecycle.
+            </p>
+          </li>
+          <li class="project-item">
+            <h3>Chat with Materials</h3>
+            <p class="project-meta">BMW AG &middot; 2025 - today </p>
+            <p>
+              Built an MCP server that let users converse with a the BMW crash material database, mapping BMW materials into ontology designed for materials used in crash simulations. This gave users a conversational interface to explore material behavior, validation, specifications and crash simulation specifics details, without deeply understanding material modelling.
+            </p>
+          </li>
+          <li class="project-item">
+            <h3>Development &amp; Integration of ATDs for crash simulations</h3>
+            <p class="project-meta">BMW AG &middot; 2015 - 2024</p>
+            <p>
+              Leading a team to build, validate, and optimize finite element ATD (Anthropomorphic Test Device) models. Our main tool was the self-developed Virtual Dummy Lab, used to develop ATD models, integrate them into vehicle models and to support projects with special analysis needs.
+            </p>
+          </li>
+          <li class="project-item">
+            <h3>Crash Performance Assessment Method for CFRP Vehicle Architectures</h3>
+            <p class="project-meta">BMW AG &middot; 2012–2015</p>
+            <p>
+              Developed an LS-DYNA userMATERIAL / userELEMENT for crash simulation to represent different structural and material behaviour during crash (crashing, splaying, delamination etc.) to optimize body-in-white and other main components, considering manufacturing defects.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="research" class="section section-alt">
+      <div class="container">
+        <h2>Research<a href="https://www.researchgate.net/profile/Balazs-Fodor-4"><img src="researchgate-logo.png" alt=""></a><a href="https://m2.mtmt.hu/gui2/?type=authors&mode=browse&lang=0&sel=10089595"><img src="m2logo1.png" alt=""></a>
+        </h2>
+        <ul class="projects">
+          <li class="project-item">
+            <h3>Constitutive and Data Driven Modelling of Materials (Elastomers &amp; Hyperfoams)</h3>
+            <p class="project-meta">BMW AG / BME &middot; 2023 – today</p>
+            <p>
+              Active research on modeling hyperelastic materials and their impact on occupant protection design. We analyzed the compressible Mooney-Rivlin and neo-Hookean hyperelastic models under multiaxial compression, showing that at higher compression rates, a non-unique transverse stretch responses can occure. Using stress triaxiality as a unifying framework across equibiaxial compression, uniaxial compression, a numerical continuation study reveealed the underlying instability mechanisms with great impact on material characterization.
+            </p>
+          </li>
+          <li class="research-link">
+            <a href="https://journals.sagepub.com/doi/10.1177/03093247241233712">Stability study of the compressible Mooney-Rivlin hyperelastic model</a>
+          </li>
+          <li class="research-link">
+            <a>Instability Mechanisms in the Compressible Mooney–Rivlin and Neo-Hookean Models Under Multiaxial Compression: A Stress-Triaxiality-Based Analysis</a> (under review)
+          </li>
+          <li class="research-link">
+            <a href="https://lsdyna.ansys.com/wp-content/uploads/2025/11/AIML_Betancourt_BMW.pdf">A Flexible Method to Integrate AI Models (PyTorch) into LS-DYNA User Defined Material Subroutines</a>
+          </li>
+          <li class="project-item">
+            <h3>Data Driven ATDs</h3>
+            <p class="project-meta">BMW AG / BME &middot; 2023 – 2026</p>
+            <p>
+              Developed a parametrized multi encoder–decoder surrogate that predicts crash-test dummy responses from scalar and multivariate time-series design parameters, decomposing the global system into interconnected local models. Bayesian structure learning automatically discovers the predictive dependency graph between sensor channels, jointly optimizing model complexity and feature selection rather than relying on a fixed a-priori structure.
+            </p>
+          </li>
+          <li class="research-link">
+            <a href="https://telex.hu">Parametrized Multi Encoder–Decoder Surrogates with Bayesian Structure Discovery: Application to Crash-Test Dummy Responses</a>
+          </li>
+          <li class="project-item">
+            <h3>Composite Materials</h3>
+            <p class="project-meta">BMW AG / BME &middot; 2018 – 2025</p>
+            <p>
+              Developed an iterative, nonlinear DoE approach to identify and validate parameters for composite failure models, ranking failure modes and suggesting further experiments. This reduces the number of tests needed for parameter identification. Also proposed a bottom-up hierarchical clustering method that partitions complex composite surfaces into manufacturable structures by iteratively merging small parts into realistic integral designs.
+            </p>
+          </li>
+          <li class="research-link">
+            <a href="https://www.sciencedirect.com/science/article/pii/S1755581725001452?via%3Dihub">Bottom-up segmentation of composite structures for cost-efficient manufacturing</a>
+          </li>
+          <li class="research-link">
+            <a href="https://www.cell.com/heliyon/fulltext/S2405-8440(24)05795-5?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2405844024057955%3Fshowall%3Dtrue">Iterative experimental design and identifiability analysis of composite material failure models</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>I'd love to hear from you – feel free to reach out:</p>
+        <ul class="contact-list">
+          <li><a href="mailto:balazs.fodor@protonmail.com">balazs.fodor@protonmail.com</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Balázs Fodor</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    (function () {
+      var root = document.documentElement;
+      var toggle = document.getElementById("theme-toggle");
+      var stored = localStorage.getItem("theme");
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var theme = stored || (prefersDark ? "dark" : "light");
+
+      applyTheme(theme);
+
+      toggle.addEventListener("click", function () {
+        theme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        applyTheme(theme);
+        localStorage.setItem("theme", theme);
+      });
+
+      function applyTheme(value) {
+        if (value === "dark") {
+          root.setAttribute("data-theme", "dark");
+        } else {
+          root.removeAttribute("data-theme");
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
